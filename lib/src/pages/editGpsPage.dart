@@ -144,7 +144,7 @@ class _editGpsPageState extends State<editGpsPage> {
             ),
             cursorColor: Colors.pinkAccent,
             autofocus: false,
-            textCapitalization: TextCapitalization.words,
+            textCapitalization: TextCapitalization.none,
             decoration: InputDecoration(
                 hoverColor: Colors.pinkAccent,
                 border: OutlineInputBorder(
@@ -167,7 +167,7 @@ class _editGpsPageState extends State<editGpsPage> {
             ),
             cursorColor: Colors.pinkAccent,
             autofocus: false,
-            textCapitalization: TextCapitalization.words,
+            textCapitalization: TextCapitalization.none,
             decoration: InputDecoration(
                 hoverColor: Colors.pinkAccent,
                 border: OutlineInputBorder(

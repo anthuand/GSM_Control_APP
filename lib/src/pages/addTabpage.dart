@@ -14,7 +14,7 @@ class _TabAddPageState extends State<TabAddPage> {
   final  gps = new Gps();
   String _nombreGPS = "";
   String _numeroTelf ="" ;
-  IconData _iconoInput = Icons.gps_not_fixed_outlined;
+  IconData _iconoInput = Icons.signal_cellular_alt_outlined;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,14 +130,14 @@ class _TabAddPageState extends State<TabAddPage> {
             ),
             cursorColor: Colors.pinkAccent,
             autofocus: false,
-            textCapitalization: TextCapitalization.words,
+            textCapitalization: TextCapitalization.none,
             decoration: InputDecoration(
                 hoverColor: Colors.pinkAccent,
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0)),
-                labelText: "Nombre GPS",
+                labelText: "Nombre GSM",
                 labelStyle: TextStyle(color: Colors.white),
-                hintText: "Escribe el nombre del GPS",
+                hintText: "Escribe el nombre del controlador GSM",
                 hintStyle: TextStyle(color: Colors.white)),
             onChanged: (valor) => setState(() {
               _nombreGPS = valor;
@@ -153,14 +153,14 @@ class _TabAddPageState extends State<TabAddPage> {
             ),
             cursorColor: Colors.pinkAccent,
             autofocus: false,
-            textCapitalization: TextCapitalization.words,
+            textCapitalization: TextCapitalization.none,
             decoration: InputDecoration(
                 hoverColor: Colors.pinkAccent,
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0)),
                 labelText: "Numero Telf",
                 labelStyle: TextStyle(color: Colors.white),
-                hintText: "Escribe el numero de la linea del gps",
+                hintText: "Escribe el numero de la linea del controlador",
                 hintStyle: TextStyle(color: Colors.white)),
             onChanged: (valor) => setState(() {
               _numeroTelf = valor ;

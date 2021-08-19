@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Center(
             child: Text(
-              "Controle sus GPS",
+              "Controle sus GSM",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Center(
             child: Text(
-              "Añada nuevos Gps",
+              "Añada un nuevo controlador GSM",
               style: TextStyle(color: Colors.white, fontSize: 20.0),
             ),
           ),
@@ -183,7 +183,7 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: Colors.pinkAccent,
               radius: 35.0,
               child: Icon(
-                Icons.gps_fixed_outlined,
+                Icons.signal_cellular_alt_outlined,
                 color: Colors.white,
                 size: 50.0,
               ),

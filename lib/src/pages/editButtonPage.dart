@@ -163,7 +163,7 @@ class _editButtonPageState extends State<editButtonPage> {
             ),
             cursorColor: Colors.pinkAccent,
             autofocus: _focusName,
-            textCapitalization: TextCapitalization.words,
+            textCapitalization: TextCapitalization.none,
             decoration: InputDecoration(
                 hoverColor: Colors.pinkAccent,
                 border: OutlineInputBorder(
@@ -186,7 +186,7 @@ class _editButtonPageState extends State<editButtonPage> {
             ),
             cursorColor: Colors.pinkAccent,
             autofocus: _focusMessage,
-            textCapitalization: TextCapitalization.words,
+            textCapitalization: TextCapitalization.none,
             decoration: InputDecoration(
                 hoverColor: Colors.pinkAccent,
                 border: OutlineInputBorder(

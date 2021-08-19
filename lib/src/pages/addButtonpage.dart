@@ -164,7 +164,7 @@ class _ButtonAddPageState extends State<ButtonAddPage> {
             ),
             cursorColor: Colors.pinkAccent,
             autofocus: _focusName,
-            textCapitalization: TextCapitalization.words,
+            textCapitalization: TextCapitalization.none,
             decoration: InputDecoration(
                 hoverColor: Colors.pinkAccent,
                 border: OutlineInputBorder(
@@ -187,7 +187,7 @@ class _ButtonAddPageState extends State<ButtonAddPage> {
             ),
             cursorColor: Colors.pinkAccent,
             autofocus: _focusMessage,
-            textCapitalization: TextCapitalization.words,
+            textCapitalization: TextCapitalization.none,
             decoration: InputDecoration(
                 hoverColor: Colors.pinkAccent,
                 border: OutlineInputBorder(
