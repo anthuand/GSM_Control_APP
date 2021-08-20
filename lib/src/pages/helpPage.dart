@@ -45,24 +45,37 @@ class _helpPageState extends State<helpPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(
+            height: 45.0,
+          ),
           Text(
-            "Cree un boton nuevo",
+            "Ayuda!",
             style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: 30.0),
+                fontSize: 50.0),
           ),
           SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            "Personalice su boton segun la necesidad",
-            style: TextStyle(color: Colors.white, fontSize: 20.0),
+            height: 20.0,
           ),
         ],
       ),
     ));
   }
 
-  _crearAyuda() {}
+  _crearAyuda() {
+    return Column(children: [
+      Container(
+        padding: EdgeInsets.only(right:25.0, left: 25.0),
+        child: Text(
+          'Esta app fue desarrollada con el objetivo de administrar controladores GSM , estos pueden integrarse en varios lugares del hogar , permitiendo un control inteligente de los electrodomesticos del hogar , entre otras muchas funciones.\n\nComo usar esta app:\n   1-Tocar el signo de agragar en la pantalla principal para crear una instancia del controlador. \n  2-Tocar el boton creado anteriormente y crear botones personalizados con nombre y mensaje. \n\n Nota: Para editar cualquier boton basta con realizar un double tap sobre ellos. \n\n Aunque esta app se creo para los controladores gps , pude ser usada en muchas mas tareas, ponga a volar su imaginacion y automatice sus tareas cotidianas😎.',
+          style: TextStyle(color: Colors.white, fontSize: 20.0),
+          textAlign: TextAlign.justify,
+        ),
+      ),
+    ],);
+  }
 }
+
+
+

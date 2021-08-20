@@ -18,12 +18,12 @@ class BottomBarNav extends StatelessWidget {
                 // ignore: deprecated_member_use
                 icon: IconButton(
                   icon: Icon(
-                    Icons.help,
+                    Icons.help_outline_rounded,
                     size: 35.0,
                     color: Theme.of(context).primaryColor,
                   ),
                   onPressed: () {
-                    
+                    Navigator.pushNamed(context, 'helpPage');
                   },
                 ),
                 // ignore: deprecated_member_use
@@ -31,7 +31,7 @@ class BottomBarNav extends StatelessWidget {
             BottomNavigationBarItem(
                 // ignore: deprecated_member_use
                 icon: IconButton(
-                  icon: Icon(Icons.home_filled,
+                  icon: Icon(Icons.home_outlined,
                       size: 35.0, color: Theme.of(context).primaryColor),
                   onPressed: () {
                     Navigator.pushNamed(context, 'home');
@@ -42,10 +42,10 @@ class BottomBarNav extends StatelessWidget {
             BottomNavigationBarItem(
                 // ignore: deprecated_member_use
                 icon: IconButton(
-                  icon: Icon(Icons.settings,
+                  icon: Icon(Icons.coffee_outlined,
                       size: 35.0, color: Theme.of(context).primaryColor),
                   onPressed: () {
-                    Navigator.pushNamed(context, 'ex');
+                    Navigator.pushNamed(context, 'coffePage');
                   },
                 ),
                 // ignore: deprecated_member_use

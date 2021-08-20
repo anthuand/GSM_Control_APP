@@ -5,8 +5,10 @@ import 'package:ubikat/src/pages/GpsDetails.dart';
 
 import 'package:ubikat/src/pages/addButtonpage.dart';
 import 'package:ubikat/src/pages/addTabpage.dart';
+import 'package:ubikat/src/pages/coffePage.dart';
 import 'package:ubikat/src/pages/editButtonPage.dart';
 import 'package:ubikat/src/pages/editGpsPage.dart';
+import 'package:ubikat/src/pages/helpPage.dart';
 import 'package:ubikat/src/pages/homepage.dart';
 // import 'package:ubikat/src/providers/db_provider.dart';
 import 'package:ubikat/src/providers/push_notification_provider.dart';
@@ -50,6 +52,8 @@ class _MyAppState extends State<MyApp> {
         'addButton': (BuildContext context) => ButtonAddPage(),
         'editGpsPage': (BuildContext context) => editGpsPage(),
         'editButtonPage': (BuildContext context) => editButtonPage(),
+        'helpPage': (BuildContext context) => helpPage(),
+        'coffePage': (BuildContext context) => coffePage(),
       },
       theme: ThemeData(
         primaryColor: Colors.white,
