@@ -51,8 +51,11 @@ class _TabAddPageState extends State<TabAddPage> {
           onPressed: ()async {
             gps.nombre=_nombreGPS;
             gps.numero=_numeroTelf;
+            if( gps.nombre ==""||gps.numero ==""){
+              _mostrarAlert();
+            }else{
             await DBProvider.db.nuevoGps(gps);
-            Navigator.pushNamed(context, 'home');
+            Navigator.pushNamed(context, 'home');}
           },
         ),
       ),
@@ -171,6 +174,28 @@ class _TabAddPageState extends State<TabAddPage> {
           ),
         ],
       ),
+    );
+  }
+  _mostrarAlert() {
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return AlertDialog(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          title: Center(
+            child: Text(
+              "ERROR",
+              style: TextStyle(color: Colors.redAccent),
+            ),
+          ),
+          content: Text(
+            "Falta algun campo por completar, por favor revise el formulario",
+            style: TextStyle(color: Colors.black),
+          ),
+        );
+      },
     );
   }
 }

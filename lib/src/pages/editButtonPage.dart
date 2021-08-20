@@ -84,8 +84,11 @@ class _editButtonPageState extends State<editButtonPage> {
             _bt.mensaje = _mensaje;
             _bt.gpsId = _gpsId;
             _bt.icono =getIconToString(_iconoInput);
+            if(_bt.mensaje ==""  || _bt.nombre =="" ){
+              _mostrarAlert();
+            }else{
             await DBProvider.db.updateBoton(_bt);
-            Navigator.pushNamed(context, "gpsDetails",arguments: _bt.gpsId);
+            Navigator.pushNamed(context, "gpsDetails",arguments: _bt.gpsId);}
           },
         ),
       ),
@@ -259,6 +262,29 @@ class _editButtonPageState extends State<editButtonPage> {
   _crearRow(List<IconData> listaIconos) {
     return TableRow(
       children: _crearItem(listaIconos),
+    );
+  }
+
+  _mostrarAlert() {
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return AlertDialog(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          title: Center(
+            child: Text(
+              "ERROR",
+              style: TextStyle(color: Colors.redAccent),
+            ),
+          ),
+          content: Text(
+            "Falta algun campo por completar, por favor revise el formulario",
+            style: TextStyle(color: Colors.black),
+          ),
+        );
+      },
     );
   }
 }

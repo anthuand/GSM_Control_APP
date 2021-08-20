@@ -24,21 +24,21 @@ class _ButtonAddPageState extends State<ButtonAddPage> {
   Color _colorIcono = Colors.pinkAccent;
   List<IconData> _listaIcons1 = [
     (Icons.car_rental),
-    (Icons.food_bank_outlined),
+    (Icons.electric_rickshaw),
     (Icons.lightbulb),
     (Icons.cloud_queue),
-    (Icons.clean_hands),
-    (Icons.add_shopping_cart_sharp),
+    (Icons.electric_bike),
+    (Icons.electric_scooter),
     (Icons.airplanemode_active_rounded),
-    (Icons.bolt),
-    (Icons.call_end_rounded),
+    (Icons.electrical_services_sharp),
+    (Icons.tv_outlined),
     (Icons.house_sharp),
-    (Icons.wine_bar),
-    (Icons.wc),
-    (Icons.volunteer_activism),
+    (Icons.access_alarm),
+    (Icons.local_play),
+    (Icons.radio),
     (Icons.videocam),
-    (Icons.cake_rounded),
-    (Icons.face_retouching_natural),
+    (Icons.cell_wifi),
+    (Icons.door_front),
     (Icons.build_sharp),
     (Icons.bus_alert),
     (Icons.add_a_photo_rounded),
@@ -84,9 +84,12 @@ class _ButtonAddPageState extends State<ButtonAddPage> {
             _bt.mensaje = _mensaje;
             _bt.gpsId = _gpsId;
             _bt.icono =getIconToString(_iconoInput);
-            await DBProvider.db.nuevoBoton(_bt);
+            if(_bt.mensaje ==""  || _bt.nombre =="" ){
+              _mostrarAlert();
+            }else{
+              await DBProvider.db.nuevoBoton(_bt);
             Navigator.pushNamed(context, "gpsDetails",arguments: _bt.gpsId);
-            
+            }
           },
         ),
       ),
@@ -260,6 +263,28 @@ class _ButtonAddPageState extends State<ButtonAddPage> {
   _crearRow(List<IconData> listaIconos) {
     return TableRow(
       children: _crearItem(listaIconos),
+    );
+  }
+  _mostrarAlert() {
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return AlertDialog(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          title: Center(
+            child: Text(
+              "ERROR",
+              style: TextStyle(color: Colors.redAccent),
+            ),
+          ),
+          content: Text(
+            "Falta algun campo por completar, por favor revise el formulario",
+            style: TextStyle(color: Colors.black),
+          ),
+        );
+      },
     );
   }
 }

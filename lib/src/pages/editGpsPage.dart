@@ -18,7 +18,7 @@ class _editGpsPageState extends State<editGpsPage> {
   final  gps = new Gps();
   String _nombreGPS = "";
   String _numeroTelf ="" ;
-  IconData _iconoInput = Icons.gps_not_fixed_outlined;
+  IconData _iconoInput = Icons.signal_cellular_alt_outlined;
 
 
   @override
@@ -60,8 +60,11 @@ class _editGpsPageState extends State<editGpsPage> {
           onPressed: ()async {
             gps!.nombre=_nombreGPS;
             gps.numero=_numeroTelf;
+            if( gps.nombre ==""||gps.numero ==""){
+              _mostrarAlert();
+            }else{
             await DBProvider.db.updateGps(gps);
-            Navigator.pushNamed(context, 'home');
+            Navigator.pushNamed(context, 'home');}
           },
         ),
       ),
@@ -111,7 +114,7 @@ class _editGpsPageState extends State<editGpsPage> {
         children: [
           Center(
             child: Text(
-              "Editar  Gps",
+              "Editar  GSM",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -123,7 +126,7 @@ class _editGpsPageState extends State<editGpsPage> {
           ),
           Center(
             child: Text(
-              "Actualice los datos de su Gps",
+              "Actualice los datos de su controlador",
               style: TextStyle(color: Colors.white, fontSize: 20.0),
             ),
           ),
@@ -149,9 +152,9 @@ class _editGpsPageState extends State<editGpsPage> {
                 hoverColor: Colors.pinkAccent,
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0)),
-                labelText: "Nombre GPS",
+                labelText: "Nombre ",
                 labelStyle: TextStyle(color: Colors.white),
-                hintText: "Escribe el nombre del GPS",
+                hintText: "Escribe el nombre del controlador",
                 hintStyle: TextStyle(color: Colors.white)),
             onChanged: (valor) => setState(() {
               _nombreGPS = valor;
@@ -174,7 +177,7 @@ class _editGpsPageState extends State<editGpsPage> {
                     borderRadius: BorderRadius.circular(20.0)),
                 labelText: "Numero Telf",
                 labelStyle: TextStyle(color: Colors.white),
-                hintText: "Escribe el numero de la linea del gps",
+                hintText: "Escribe el numero de la linea del controlador",
                 hintStyle: TextStyle(color: Colors.white)),
             onChanged: (valor) => setState(() {
               _numeroTelf = valor ;
@@ -185,6 +188,28 @@ class _editGpsPageState extends State<editGpsPage> {
           ),
         ],
       ),
+    );
+  }
+  _mostrarAlert() {
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return AlertDialog(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          title: Center(
+            child: Text(
+              "ERROR",
+              style: TextStyle(color: Colors.redAccent),
+            ),
+          ),
+          content: Text(
+            "Falta algun campo por completar, por favor revise el formulario",
+            style: TextStyle(color: Colors.black),
+          ),
+        );
+      },
     );
   }
 }
