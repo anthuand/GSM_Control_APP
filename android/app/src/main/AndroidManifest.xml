@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ubikat">
    <application
-        android:label="ubikat"
+        android:label="GSM Control"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

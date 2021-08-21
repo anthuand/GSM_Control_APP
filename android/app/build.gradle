@@ -25,6 +25,11 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+   keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   }
 android {
     compileSdkVersion 30
 
@@ -37,8 +42,8 @@ android {
         applicationId "com.example.ubikat"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        versionCode 2
+        versionName '1.0.1'
     }
 
     buildTypes {
@@ -56,9 +61,6 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation platform('com.google.firebase:firebase-bom:28.3.0')
-    implementation 'com.google.firebase:firebase-analytics'
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'

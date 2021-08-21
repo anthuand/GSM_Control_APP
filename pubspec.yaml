@@ -24,12 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   sms_advanced: ^1.0.1
-  firebase_messaging:
-  firebase_auth: 
-  firebase_core: 
   sqflite: 
   path_provider: 
-  contextualactionbar: 
   flutter_toastr: ^1.0.3
   flutter_native_splash: ^1.2.1
 
